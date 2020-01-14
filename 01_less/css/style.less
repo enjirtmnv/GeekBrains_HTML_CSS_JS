@@ -1,6 +1,10 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css?family=Barrio&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Codystar&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
 @widthAll: 1000px;
 @colorBack: #ff8199;
@@ -22,19 +26,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../img/3.jpg");
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-position: left bottom;
-  background-size: 800px 400px;
   color: transparent;
   font-family: 'Barrio', cursive;
+  font-weight: bold;
+  background-image: url("../img/move.jpg");
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-position: bottom;
+  background-size: 80%;
 }
 
 .main{
   padding: 40px 0 0 0;
   background-color: @colorBack - #011;
-  height: 2300px;
+  height: 3400px;
   .block{
     width: @widthAll / 3;
     height: 400px;
@@ -50,15 +55,49 @@
   content: '';
 }
 
-.mainText{
-  
+.mainText1{
+  font-family: 'IM Fell Great Primer SC', serif;
+  color: #f4f4f4;
+  font-size: 1.5em;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  left: 500px;
+  top: 300px;
+  z-index: 10;
+}
+
+.mainText2{
+  font-family: 'Anton', sans-serif;
+  color: #f4f4f4;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  position: absolute;
+  left: 700px;
+  top: 490px;
+}
+
+.mainText3{
+  font-family: 'Shadows Into Light', cursive;
+  color: #f4f4f4;
+  font-size: 4em;
+  position: absolute;
+  left: 780px;
+  top: 320px;
+  text-shadow: 0px 4px 0px rgba(155, 92, 98, 0.69);
+}
+
+.mainGif{
+  position: relative;
+  left: -100px;
 }
 
 .mainMove{
-  height: 370px;
+  height: 250px;
   display: flex;
   justify-content: center;
-  margin: 180px 0 0 0;
+  margin: 70px 0 0 0;
+
 }
 
 @keyframes textMovement1 {
@@ -81,7 +120,7 @@
   font-family: 'Codystar', cursive;
   color: #fff;
   text-transform: uppercase;
-  background-image: url("../img/3.jpg");
+  background-image: url("../img/move.jpg");
   background-position: right center;
   background-clip: content-box;
   background-size: 80%;
@@ -109,7 +148,7 @@
   font-family: 'Codystar', cursive;
   color: #fff;
   text-transform: uppercase;
-  background-image: url("../img/3.jpg");
+  background-image: url("../img/move.jpg");
   background-position: right center;
   background-clip: content-box;
   background-size: 80%;
@@ -119,6 +158,274 @@
 .blockMove2{
   position: absolute;
   left: 100vw *2;
+}
+
+.rotation{
+  position: absolute;
+  left: 1000px;
+  width: 100px;
+  height: 100px;
+}
+
+.rotation span{
+  position: absolute;  /* все буквы собрать в одну точку по середине */
+  left: 50%;
+}
+
+.rotation span:nth-of-type(-n+20){
+  display: block;
+  text-transform: uppercase;
+  bottom: 50%;
+  transform-origin: 0% 100%;
+  padding-bottom: 50%;
+  font-weight: bold;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5em;
+  color: #eeeeee;
+  text-shadow: 0px 4px 0px rgba(155, 92, 98, 0.69);
+}
+
+@keyframes rotationMove1 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove2 {
+  from {
+    -webkit-transform: rotate(18deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(378deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove3 {
+  from {
+    -webkit-transform: rotate(36deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(396deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove4 {
+  from {
+    -webkit-transform: rotate(54deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(414deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove5 {
+  from {
+    -webkit-transform: rotate(72deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(432deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove6 {
+  from {
+    -webkit-transform: rotate(90deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(450deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove7 {
+  from {
+    -webkit-transform: rotate(108deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(468deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove8 {
+  from {
+    -webkit-transform: rotate(126deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(486deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove9 {
+  from {
+    -webkit-transform: rotate(144deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(504deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove10 {
+  from {
+    -webkit-transform: rotate(162deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(522deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove11 {
+  from {
+    -webkit-transform: rotate(180deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(540deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove12 {
+  from {
+    -webkit-transform: rotate(198deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(558deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove13 {
+  from {
+    -webkit-transform: rotate(216deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(576deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove14 {
+  from {
+    -webkit-transform: rotate(234deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(594deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove15 {
+  from {
+    -webkit-transform: rotate(252deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(612deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove16 {
+  from {
+    -webkit-transform: rotate(270deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(630deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove17 {
+  from {
+    -webkit-transform: rotate(288deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(648deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove18 {
+  from {
+    -webkit-transform: rotate(306deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(666deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove19 {
+  from {
+    -webkit-transform: rotate(324deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(684deg) translateX(12px) rotate(360deg);
+  }
+}
+@keyframes rotationMove20 {
+  from {
+    -webkit-transform: rotate(342deg) translateX(12px) rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(702deg) translateX(12px) rotate(360deg);
+  }
+}
+
+
+.rotation span:nth-of-type(1){
+  transform: rotate(18deg);
+  animation: rotationMove1 7s linear infinite;
+}
+.rotation span:nth-of-type(2){
+  transform: rotate(36deg);
+  animation: rotationMove2 7s linear infinite;
+}
+.rotation span:nth-of-type(3){
+  transform: rotate(54deg);
+  animation: rotationMove3 7s linear infinite;
+}
+.rotation span:nth-of-type(4){
+  transform: rotate(72deg);
+  animation: rotationMove4 7s linear infinite;
+}
+.rotation span:nth-of-type(5){
+  transform: rotate(90deg);
+  animation: rotationMove5 7s linear infinite;
+}
+.rotation span:nth-of-type(6){
+  transform: rotate(108deg);
+  animation: rotationMove6 7s linear infinite;
+}
+.rotation span:nth-of-type(7){
+  transform: rotate(126deg);
+  animation: rotationMove7 7s linear infinite;
+}
+.rotation span:nth-of-type(8){
+  transform: rotate(144deg);
+  animation: rotationMove8 7s linear infinite;
+}
+.rotation span:nth-of-type(9){
+  transform: rotate(162deg);
+  animation: rotationMove9 7s linear infinite;
+}
+.rotation span:nth-of-type(10){
+  transform: rotate(180deg);
+  animation: rotationMove10 7s linear infinite;
+}
+.rotation span:nth-of-type(11){
+  transform: rotate(198deg);
+  animation: rotationMove11 7s linear infinite;
+}
+.rotation span:nth-of-type(12){
+  transform: rotate(216deg);
+  animation: rotationMove12 7s linear infinite;
+}
+.rotation span:nth-of-type(13){
+  transform: rotate(234deg);
+  animation: rotationMove13 7s linear infinite;
+}
+.rotation span:nth-of-type(14){
+  transform: rotate(252deg);
+  animation: rotationMove14 7s linear infinite;
+}
+.rotation span:nth-of-type(15){
+  transform: rotate(270deg);
+  animation: rotationMove15 7s linear infinite;
+}
+.rotation span:nth-of-type(16){
+  transform: rotate(288deg);
+  animation: rotationMove16 7s linear infinite;
+}
+.rotation span:nth-of-type(17){
+  transform: rotate(306deg);
+  animation: rotationMove17 7s linear infinite;
+}
+.rotation span:nth-of-type(18){
+  transform: rotate(324deg);
+  animation: rotationMove18 7s linear infinite;
+}
+.rotation span:nth-of-type(19){
+  transform: rotate(342deg);
+  animation: rotationMove19 7s linear infinite;
+}
+.rotation span:nth-of-type(20){
+  transform: rotate(360deg);
+  animation: rotationMove20 7s linear infinite;
 }
 
 .img1{
@@ -162,13 +469,77 @@
 }
 
 .img6{
+   background-size: cover;
+   background-image: url("../img/6.jpg");
+   position: relative;
+   left: 300px;
+   top: 140px;
+ }
+
+.img7{
   background-size: cover;
-  background-image: url("../img/6.jpg");
+  background-image: url("../img/11.jpg");
   position: relative;
-  left: 300px;
+  right: 200px;
+  top: 170px;
+}
+
+.img8{
+  top: 100px;
+  position: relative;
+  float: left;
+  width: 393px;
+  height: 500px;
+}
+
+.img9{
+  background-size: cover;
+  background-image: url("../img/99.jpg");
+  position: relative;
+  left: 260px;
   top: 140px;
 }
 
+.img10{
+  background-size: cover;
+  background-image: url("../img/10.jpg");
+  position: relative;
+  left: 380px;
+  top: 80px;
+}
+
+.mainText4{
+  font-family: 'IM Fell Great Primer SC', serif;
+  color: #9b5c62;
+  font-size: 3em;
+  width: 290px;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  margin: 0 0 100px 0 ;
+}
+
+.mainText5{
+  font-family: 'IM Fell Great Primer SC', serif;
+  color: #f4f4f4;
+  font-size: 1.5em;
+  width: 190px;
+  height: 100px;
+  bottom: 400px;
+  display: flex;
+  align-items: flex-end;
+}
+
+
+.mainText6{
+  font-family: 'Anton', sans-serif;
+  color: #f4f4f4;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
 
 .footer{
   height: 200px;
