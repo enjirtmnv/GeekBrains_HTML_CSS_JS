@@ -60,11 +60,12 @@
   color: transparent;
   font-family: 'Barrio', cursive;
   font-weight: bold;
-  background-image: url("../img/move.jpg");
+  background-image: url("../img/0.jpg");
   background-clip: text;
   -webkit-background-clip: text;
   background-position: bottom;
   background-size: 80%;
+  -webkit-text-stroke: 0.7px white;
 }
 .main {
   padding: 40px 0 0 0;
@@ -123,7 +124,7 @@
   justify-content: center;
   margin: 70px 0 0 0;
 }
-@keyframes textMovement1 {
+@keyframes textMove1 {
   0% {
     right: 0;
   }
@@ -142,13 +143,13 @@
   font-family: 'Codystar', cursive;
   color: #fff;
   text-transform: uppercase;
-  background-image: url("../img/move.jpg");
+  background-image: url("../img/0.jpg");
   background-position: right center;
   background-clip: content-box;
   background-size: 80%;
-  animation: textMovement1 5s linear infinite normal;
+  animation: textMove1 5s linear infinite normal;
 }
-@keyframes textMovement2 {
+@keyframes textMove2 {
   0% {
     right: 0;
   }
@@ -167,11 +168,11 @@
   font-family: 'Codystar', cursive;
   color: #fff;
   text-transform: uppercase;
-  background-image: url("../img/move.jpg");
+  background-image: url("../img/0.jpg");
   background-position: right center;
   background-clip: content-box;
   background-size: 80%;
-  animation: textMovement2 5s linear infinite normal;
+  animation: textMove2 5s linear infinite normal;
 }
 .blockMove2 {
   position: absolute;
@@ -498,7 +499,7 @@
 }
 .img9 {
   background-size: cover;
-  background-image: url("../img/99.jpg");
+  background-image: url("../img/9.jpg");
   position: relative;
   left: 260px;
   top: 140px;
@@ -510,15 +511,20 @@
   left: 380px;
   top: 80px;
 }
+.mainImg:after {
+  clear: both;
+  content: '';
+  display: block;
+}
 .mainText4 {
   font-family: 'IM Fell Great Primer SC', serif;
   color: #9b5c62;
   font-size: 3em;
   width: 290px;
-  height: 100px;
+  height: 150px;
   display: flex;
   align-items: flex-end;
-  margin: 0 0 100px 0 ;
+  margin: 0 0 50px -30px;
 }
 .mainText5 {
   font-family: 'IM Fell Great Primer SC', serif;
@@ -529,6 +535,7 @@
   bottom: 400px;
   display: flex;
   align-items: flex-end;
+  margin: 0 0 0 20px;
 }
 .mainText6 {
   font-family: 'Anton', sans-serif;
@@ -538,11 +545,73 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  margin: -70px 0 0 0;
 }
 .footer {
-  height: 200px;
+  position: relative;
+  height: 400px;
   background-color: #ffa3bb;
+  display: flex;
+  justify-content: center;
   width: 1000px;
   margin: 0 auto;
 }
+.footerBlockText {
+  position: absolute;
+}
+.footerText {
+  width: 470px;
+  height: 200px;
+  text-align: center;
+  font-size: 7em;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1);
+  background-image: url("../img/white.jpg");
+  background-size: auto 110px;
+  background-repeat: repeat-x;
+  -webkit-background-clip: text;
+  animation: footerTextMove 1.5s linear infinite;
+  transform: translate3d(0px, 110px, 0px);
+  transition: footerBlockText 1s ease-in-out;
+}
+.footerText.active {
+  transform: translate3d(0px, 0, 0);
+  opacity: 1;
+}
+@keyframes footerTextMove {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+/*
+
+.footerText{
+  width: 470px;
+  text-align: center;
+  font-size: 7em;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: bold;
+  text-shadow: 0 0 80px rgba(255,255,255,0.1);
+  background-image: url("../img/0.jpg");
+  background-repeat: repeat-x;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: footerTextMove 10s linear infinite; //внутрення часть текста движется по оси х
+ -webkit-backface-visibility: hidden;
+}
+
+@-webkit-keyframes footerTextMove {
+  0%{
+    background-position: 50% 100%;
+  }
+  100%{
+    background-position: 50% 0%;
+  }
+}
+
+ */
 /*# sourceMappingURL=style.css.map */
