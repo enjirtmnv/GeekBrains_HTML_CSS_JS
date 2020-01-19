@@ -553,11 +553,18 @@
 .footer{
   position: relative;
   height: 400px;
-  background-color: @colorBack + #222;
+  //background-color: @colorBack + #222;
+  background-image: url("../img/9.jpg");
   display: flex;
-  justify-content: center;
-
+  align-items: center;
+  transition: all 2s ease-in-out;
+  background-size: cover;
   .sizeWidth
+}
+
+.footer.colorOne{
+  background-image: url("../img/9.jpg");
+  background-position: left center;
 }
 
 .footerBlockText{
@@ -566,7 +573,7 @@
 
 .footerText{
   width: 470px;
-  height: 200px;
+  height: 220px;
   text-align: center;
   font-size: 7em;
   font-family: 'Permanent Marker', cursive;
@@ -575,18 +582,23 @@
   background-image: url("../img/white.jpg");
   background-size: auto 110px;
   background-repeat: repeat-x;
+  background-position: 50% 0%;
   -webkit-background-clip: text;
-  animation: footerTextMove 1.5s linear infinite;
-  transform: translate3d(0px, 110px, 0px);
-  transition: footerBlockText 1s ease-in-out;
-  // opacity: 0;
+  transform: translate3d(470px, 0px, 0px);
+  transition: all 1.5s ease-in-out;
+  -webkit-text-stroke: 2px #ffffff;
+  opacity: 0;
 }
 
 .footerText.active{
   transform: translate3d(0px, 0, 0);
   opacity: 1;
+  background-position: 50% 100%;
 }
 
+
+
+/*
 @keyframes footerTextMove {
   0%{
     background-position: 50% 0%;
@@ -596,6 +608,8 @@
   }
 }
 
+
+ */
 
 
 
