@@ -1,0 +1,189 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,800&display=swap');
+
+@pageWidth: 100vw;
+@pageFontFamily: 'Poppins', sans-serif;
+@innerWidth: 2/3 * @pageWidth;
+@whiteColor: #ffffff;
+@caramelColor: #B66615;
+@greyColor: #777777;
+
+body{
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+.header{
+  transform-style: preserve-3d;
+  width: @pageWidth;
+  height: 100vh;
+  //background-image: url("../img/header.jpg");
+  //background-size: cover;
+  //background-position: center center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  //filter: brightness(90%);
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transform-origin: center;
+    height: 80vh;
+    background-image: url("../img/header.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat ;
+    transform: translateZ(-1px) scale(2);
+  }
+ }
+
+.logoCoffee{
+  width: 119px;
+  height: 73px;
+  padding: 21px 0 44px 0;
+}
+
+.menu{
+  display: flex;
+  flex-direction: row;
+  li{
+    transition: transform 0.2s linear;
+    &:hover{
+      transform: scale(1.1,1.1);
+    }
+  }
+  li a{
+    color: @whiteColor;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: @pageFontFamily;
+    font-weight: 600;
+    font-size: 0.8em;
+    padding: 4px 23px;
+    &:hover{
+      border-bottom: 2px solid @whiteColor;
+    }
+  }
+}
+
+.logoVintage{
+  width: 159px;
+  padding: 58px 0 40px 0;
+}
+
+.headerTitle{
+  color: @whiteColor;
+  text-transform: lowercase;
+  font-size: 4em;
+  font-family: @pageFontFamily;
+  font-weight: 800;
+  padding: 0 0 28px 0;
+}
+
+.discoverCoffeeButton{
+  color: @whiteColor;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 168px;
+  height: 48px;
+  background-color: @caramelColor;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: @pageFontFamily;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 0.15em;
+  transition: transform 0.3s linear, background-color  0.3s linear, color 0.3s linear;
+  &:hover{
+    transform: scale(1.2,1.2);
+    background-color: @whiteColor;
+    color: @caramelColor;
+  }
+}
+
+.main{
+  width: @pageWidth;
+  height: 105vh;
+  background-color: @whiteColor;
+  display: flex;
+  justify-content: center;
+}
+
+.historyAndWhyChooseUs{
+  width: @innerWidth;
+}
+.historyAndWhyChooseUsTitle{
+  color: @caramelColor;
+  font-size: 2.5em;
+  font-family: @pageFontFamily;
+  font-weight: 800;
+  text-transform: capitalize;
+  padding: 0 0 20px 0 ;
+}
+.historyAndWhyChooseUsPar{
+  color: @greyColor;
+  font-size: 0.9em;
+  font-family: @pageFontFamily;
+  font-weight: 400;
+  line-height: 2.5em;
+  text-align: justify;
+}
+
+.history{
+  height: 60%;
+  padding: 135px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .historyImgBlock{
+    display: flex;
+    flex-direction: column;
+    .historyImgBig{
+      position: relative;
+      height: 320px;
+    }
+    .historyImgSmall{
+      position: relative;
+      height: 240px;
+      left: 190px;
+      bottom: 95px;
+    }
+  }
+  .historyTextBlock{
+    width: 377px;
+    .historyTextTitle{
+      .historyAndWhyChooseUsTitle
+    }
+    .historyTextPar{
+      .historyAndWhyChooseUsPar
+    }
+  }
+}
+
+.whyChooseUs{
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .whyChooseUsTextTitle{
+    .historyAndWhyChooseUsTitle
+  }
+  .whyChooseUsTextUl{
+    .historyAndWhyChooseUsPar
+  }
+  .whyChooseUsImg{
+    height: 375px;
+  }
+}
+
