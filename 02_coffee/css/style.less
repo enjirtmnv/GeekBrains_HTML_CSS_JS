@@ -1,55 +1,70 @@
 @import url(reset.css);
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Poppins:400,600,800&display=swap');
 
 @pageWidth: 100vw;
-@pageFontFamily: 'Poppins', sans-serif;
+@fontFamilyPoppins: 'Poppins', sans-serif;
+@fontFamilyMontserrat: 'Montserrat', sans-serif;
 @innerWidth: 2/3 * @pageWidth;
 @whiteColor: #ffffff;
 @caramelColor: #B66615;
 @greyColor: #777777;
 
+html{
+  overflow: hidden;
+}
+
 body{
+  height: 100vh;
   perspective: 1px;
+  transform-style: preserve-3d ;
   overflow-x: hidden;
   overflow-y: auto;
+}
 
+.headerParallax{
+  width: 100vw;
+  height: 80vh;
+  box-sizing: border-box;
+  transform-style: preserve-3d ;
+  z-index: -1;
+  &::before{
+    content: '';
+    width: 100vw;
+    height: 80vh;
+    top: 0;
+    left: 0;
+    background-image: url("../img/header.jpg");
+    position: absolute;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2.3);
+  }
 }
 
 .header{
-  transform-style: preserve-3d;
+  margin: 0 auto;
   width: @pageWidth;
-  height: 100vh;
-  //background-image: url("../img/header.jpg");
-  //background-size: cover;
-  //background-position: center center;
+  height: 80vh;
+  background-size: cover;
+  background-position: center center;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  //filter: brightness(90%);
-  &:before{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transform-origin: center;
-    height: 80vh;
-    background-image: url("../img/header.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat ;
-    transform: translateZ(-1px) scale(2);
-  }
- }
+  filter: brightness(90%);
+}
 
 .logoCoffee{
   width: 119px;
   height: 73px;
-  padding: 21px 0 44px 0;
+  margin: 21px 0 44px 0;
+}
+
+.textMenuAndClock{
+  color: @whiteColor;
+  text-transform: uppercase;
+  font-family: @fontFamilyPoppins;
+  font-weight: 600;
+  font-size: 0.9em;
 }
 
 .menu{
@@ -62,13 +77,10 @@ body{
     }
   }
   li a{
-    color: @whiteColor;
-    text-transform: uppercase;
     text-decoration: none;
-    font-family: @pageFontFamily;
-    font-weight: 600;
-    font-size: 0.8em;
-    padding: 4px 23px;
+    margin: 0 23px;
+    padding: 4px 0;
+    .textMenuAndClock;
     &:hover{
       border-bottom: 2px solid @whiteColor;
     }
@@ -77,16 +89,16 @@ body{
 
 .logoVintage{
   width: 159px;
-  padding: 58px 0 40px 0;
+  margin: 58px 0 40px 0;
 }
 
 .headerTitle{
   color: @whiteColor;
   text-transform: lowercase;
   font-size: 4em;
-  font-family: @pageFontFamily;
+  font-family: @fontFamilyPoppins;
   font-weight: 800;
-  padding: 0 0 28px 0;
+  margin: 0 0 28px 0;
 }
 
 .discoverCoffeeButton{
@@ -100,11 +112,11 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: @pageFontFamily;
+  font-family: @fontFamilyPoppins;
   font-weight: 600;
   font-size: 0.7em;
   letter-spacing: 0.15em;
-  transition: transform 0.3s linear, background-color  0.3s linear, color 0.3s linear;
+  transition: transform 0.2s linear, background-color  0.2s linear, color 0.2s linear;
   &:hover{
     transform: scale(1.2,1.2);
     background-color: @whiteColor;
@@ -114,35 +126,38 @@ body{
 
 .main{
   width: @pageWidth;
-  height: 105vh;
   background-color: @whiteColor;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
 }
 
 .historyAndWhyChooseUs{
   width: @innerWidth;
+  height: 1070px;
 }
-.historyAndWhyChooseUsTitle{
+.titleH2{
   color: @caramelColor;
   font-size: 2.5em;
-  font-family: @pageFontFamily;
+  font-family: @fontFamilyPoppins;
   font-weight: 800;
   text-transform: capitalize;
-  padding: 0 0 20px 0 ;
+  margin: 0 0 20px 0 ;
 }
-.historyAndWhyChooseUsPar{
+.par{
   color: @greyColor;
   font-size: 0.9em;
-  font-family: @pageFontFamily;
+  font-family: @fontFamilyPoppins;
   font-weight: 400;
   line-height: 2.5em;
   text-align: justify;
 }
 
 .history{
-  height: 60%;
-  padding: 135px 0 0 0;
+  height: 50%;
+  margin: 135px 0 0 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -163,27 +178,77 @@ body{
   .historyTextBlock{
     width: 377px;
     .historyTextTitle{
-      .historyAndWhyChooseUsTitle
+      .titleH2;
     }
     .historyTextPar{
-      .historyAndWhyChooseUsPar
+      .par;
     }
   }
 }
 
 .whyChooseUs{
-  height: 40%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   .whyChooseUsTextTitle{
-    .historyAndWhyChooseUsTitle
+    .titleH2;
   }
   .whyChooseUsTextUl{
-    .historyAndWhyChooseUsPar
+    list-style-type: disc;
+    .par;
   }
   .whyChooseUsImg{
     height: 375px;
   }
 }
+
+.hours{
+  background-image: url("../img/clock_back.jpg");
+  background-size: cover;
+  background-position: top center ;
+  width: @pageWidth;
+  height: 535px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .hoursTitle{
+    .titleH2
+  }
+  .hoursIconClock{
+    margin: 5px 0 30px 0;
+  }
+  .hoursWorking{
+    display: flex;
+    flex-direction: row;
+    line-height: 2em;
+    .hoursSundayToTuesday{
+      width: 170px;
+      margin: 0 25px 0 0;
+      .textMenuAndClock;
+      p{
+        display: flex;
+        justify-content: flex-end;
+      }
+      p:nth-child(2){
+        font-size: 1.2em;
+        font-family: @fontFamilyMontserrat
+      }
+    }
+    .hoursFridayAndSaturday{
+      width: 170px;
+      margin: 0 0 0 25px;
+      .textMenuAndClock;
+      p{
+        display: flex;
+        justify-content: flex-start;
+      }
+      p:nth-child(2){
+        font-size: 1.2em;
+        font-family: @fontFamilyMontserrat
+      }
+    }
+  }
+}
+
 

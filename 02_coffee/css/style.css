@@ -1,5 +1,12 @@
 @import url(reset.css);
 @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+}
+@font-face {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
@@ -20,41 +27,57 @@
   font-display: swap;
   src: local('Poppins ExtraBold'), local('Poppins-ExtraBold'), url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLDD4Z1xlEA.ttf) format('truetype');
 }
+html {
+  overflow: hidden;
+}
 body {
+  height: 100vh;
   perspective: 1px;
+  transform-style: preserve-3d;
   overflow-x: hidden;
   overflow-y: auto;
 }
-.header {
-  transform-style: preserve-3d;
+.headerParallax {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+.headerParallax::before {
+  content: '';
+  width: 100vw;
+  height: 80vh;
+  top: 0;
+  left: 0;
+  background-image: url("../img/header.jpg");
+  position: absolute;
+  z-index: -1;
+  transform: translateZ(-1px) scale(2.3);
+}
+.header {
+  margin: 0 auto;
+  width: 100vw;
+  height: 80vh;
+  background-size: cover;
+  background-position: center center;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-}
-.header:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  transform-origin: center;
-  height: 80vh;
-  background-image: url("../img/header.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transform: translateZ(-1px) scale(2);
+  filter: brightness(90%);
 }
 .logoCoffee {
   width: 119px;
   height: 73px;
-  padding: 21px 0 44px 0;
+  margin: 21px 0 44px 0;
+}
+.textMenuAndClock {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
 }
 .menu {
   display: flex;
@@ -67,20 +90,21 @@ body {
   transform: scale(1.1, 1.1);
 }
 .menu li a {
+  text-decoration: none;
+  margin: 0 23px;
+  padding: 4px 0;
   color: #ffffff;
   text-transform: uppercase;
-  text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 0.8em;
-  padding: 4px 23px;
+  font-size: 0.9em;
 }
 .menu li a:hover {
   border-bottom: 2px solid #ffffff;
 }
 .logoVintage {
   width: 159px;
-  padding: 58px 0 40px 0;
+  margin: 58px 0 40px 0;
 }
 .headerTitle {
   color: #ffffff;
@@ -88,7 +112,7 @@ body {
   font-size: 4em;
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
-  padding: 0 0 28px 0;
+  margin: 0 0 28px 0;
 }
 .discoverCoffeeButton {
   color: #ffffff;
@@ -105,7 +129,7 @@ body {
   font-weight: 600;
   font-size: 0.7em;
   letter-spacing: 0.15em;
-  transition: transform 0.3s linear, background-color 0.3s linear, color 0.3s linear;
+  transition: transform 0.2s linear, background-color 0.2s linear, color 0.2s linear;
 }
 .discoverCoffeeButton:hover {
   transform: scale(1.2, 1.2);
@@ -114,23 +138,26 @@ body {
 }
 .main {
   width: 100vw;
-  height: 105vh;
   background-color: #ffffff;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
 }
 .historyAndWhyChooseUs {
   width: 66.66666667vw;
+  height: 1070px;
 }
-.historyAndWhyChooseUsTitle {
+.titleH2 {
   color: #B66615;
   font-size: 2.5em;
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   text-transform: capitalize;
-  padding: 0 0 20px 0 ;
+  margin: 0 0 20px 0 ;
 }
-.historyAndWhyChooseUsPar {
+.par {
   color: #777777;
   font-size: 0.9em;
   font-family: 'Poppins', sans-serif;
@@ -139,8 +166,8 @@ body {
   text-align: justify;
 }
 .history {
-  height: 60%;
-  padding: 135px 0 0 0;
+  height: 50%;
+  margin: 135px 0 0 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -168,7 +195,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   text-transform: capitalize;
-  padding: 0 0 20px 0 ;
+  margin: 0 0 20px 0 ;
 }
 .history .historyTextBlock .historyTextPar {
   color: #777777;
@@ -179,7 +206,6 @@ body {
   text-align: justify;
 }
 .whyChooseUs {
-  height: 40%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -190,9 +216,10 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   text-transform: capitalize;
-  padding: 0 0 20px 0 ;
+  margin: 0 0 20px 0 ;
 }
 .whyChooseUs .whyChooseUsTextUl {
+  list-style-type: disc;
   color: #777777;
   font-size: 0.9em;
   font-family: 'Poppins', sans-serif;
@@ -202,5 +229,66 @@ body {
 }
 .whyChooseUs .whyChooseUsImg {
   height: 375px;
+}
+.hours {
+  background-image: url("../img/clock_back.jpg");
+  background-size: cover;
+  background-position: top center ;
+  width: 100vw;
+  height: 535px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hours .hoursTitle {
+  color: #B66615;
+  font-size: 2.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: capitalize;
+  margin: 0 0 20px 0 ;
+}
+.hours .hoursIconClock {
+  margin: 5px 0 30px 0;
+}
+.hours .hoursWorking {
+  display: flex;
+  flex-direction: row;
+  line-height: 2em;
+}
+.hours .hoursWorking .hoursSundayToTuesday {
+  width: 170px;
+  margin: 0 25px 0 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.hours .hoursWorking .hoursSundayToTuesday p {
+  display: flex;
+  justify-content: flex-end;
+}
+.hours .hoursWorking .hoursSundayToTuesday p:nth-child(2) {
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
+}
+.hours .hoursWorking .hoursFridayAndSaturday {
+  width: 170px;
+  margin: 0 0 0 25px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.hours .hoursWorking .hoursFridayAndSaturday p {
+  display: flex;
+  justify-content: flex-start;
+}
+.hours .hoursWorking .hoursFridayAndSaturday p:nth-child(2) {
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
