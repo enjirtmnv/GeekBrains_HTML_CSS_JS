@@ -15,7 +15,7 @@ function myScrolling(e) {
 document.addEventListener("DOMContentLoaded", scrolling, false);
 
 
-let two = document.querySelector('.two');
+let two = document.querySelector('.child');
 
 function scrolling(e) {
     if (fullVisible(two)) {
