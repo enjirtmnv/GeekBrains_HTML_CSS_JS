@@ -7,7 +7,7 @@
 @innerWidth: 2/3 * @pageWidth;
 @whiteColor: #ffffff;
 @caramelColor: #B66615;
-@greyColor: #777777;
+@greyColor: #888888;
 
 html{
   overflow: hidden;
@@ -37,7 +37,7 @@ body{
     position: absolute;
     z-index: -1;
     transform: translateZ(-1px) scale(2.3);
-    filter: brightness(85%);
+    filter: brightness(80%);
   }
 }
 
@@ -51,12 +51,45 @@ body{
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-}
-
-.logoCoffee{
-  width: 119px;
-  height: 73px;
-  margin: 21px 0 44px 0;
+  .logoCoffee{
+    width: 119px;
+    height: 73px;
+    margin: 21px 0 44px 0;
+  }
+  .menuNav{
+    display: flex;
+    flex-direction: row;
+    li{
+      transition: transform 0.2s linear;
+      &:hover{
+        transform: scale(1.2,1.2);
+      }
+    }
+    li a{
+      text-decoration: none;
+      margin: 0 23px;
+      padding: 4px 0;
+      .textMenuNavAndClock;
+      &:hover{
+        border-bottom: 2px solid @whiteColor;
+      }
+    }
+  }
+  .logoVintage{
+    width: 159px;
+    margin: 58px 0 40px 0;
+  }
+  .headerTitle{
+    color: @whiteColor;
+    text-transform: lowercase;
+    font-size: 4em;
+    font-family: @fontFamilyPoppins;
+    font-weight: 800;
+    margin: 0 0 28px 0;
+  }
+  .discoverCoffeeButton{
+    .button;
+  }
 }
 
 .textMenuNavAndClock{
@@ -67,41 +100,7 @@ body{
   font-size: 0.9em;
 }
 
-.menuNav{
-  display: flex;
-  flex-direction: row;
-  li{
-    transition: transform 0.2s linear;
-    &:hover{
-      transform: scale(1.2,1.2);
-    }
-  }
-  li a{
-    text-decoration: none;
-    margin: 0 23px;
-    padding: 4px 0;
-    .textMenuNavAndClock;
-    &:hover{
-      border-bottom: 2px solid @whiteColor;
-    }
-  }
-}
-
-.logoVintage{
-  width: 159px;
-  margin: 58px 0 40px 0;
-}
-
-.headerTitle{
-  color: @whiteColor;
-  text-transform: lowercase;
-  font-size: 4em;
-  font-family: @fontFamilyPoppins;
-  font-weight: 800;
-  margin: 0 0 28px 0;
-}
-
-.discoverCoffeeButton, .moreCoffeeButton{
+.button{
   color: @whiteColor;
   text-transform: uppercase;
   text-decoration: none;
@@ -124,35 +123,18 @@ body{
   }
 }
 
-.main{
+.pageHistoryAndWhyChooseUs{
   width: @pageWidth;
   background-color: @whiteColor;
   display: flex;
   align-items: center;
   flex-direction: column;
-  z-index: 2;
+  z-index: 10;
   position: relative;
-}
-
-.historyAndWhyChooseUs{
-  width: @pageWidth;
-  height: 1070px;
-}
-.titleH2{
-  color: @caramelColor;
-  font-size: 2.5em;
-  font-family: @fontFamilyPoppins;
-  font-weight: 800;
-  text-transform: capitalize;
-  margin: 0 0 20px 0 ;
-}
-.par{
-  color: @greyColor;
-  font-size: 0.9em;
-  font-family: @fontFamilyPoppins;
-  font-weight: 400;
-  line-height: 2.5em;
-  text-align: justify;
+  .innerHistoryAndWhyChooseUs{
+    width: @innerWidth;
+    height: 1070px;
+  }
 }
 
 .history{
@@ -178,6 +160,7 @@ body{
   .historyTextBlock{
     width: 377px;
     .historyTextTitle{
+      margin: 0 0 20px 0 ;
       .titleH2;
     }
     .historyTextPar{
@@ -191,6 +174,7 @@ body{
   flex-direction: row;
   justify-content: space-around;
   .whyChooseUsTextTitle{
+    margin: 0 0 20px 0 ;
     .titleH2;
   }
   .whyChooseUsTextUl{
@@ -202,12 +186,28 @@ body{
   }
 }
 
+.titleH2{
+  color: @caramelColor;
+  font-size: 2.5em;
+  font-family: @fontFamilyPoppins;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.par{
+  color: @greyColor;
+  font-size: 0.9em;
+  font-family: @fontFamilyPoppins;
+  font-weight: 400;
+  line-height: 2.5em;
+  text-align: justify;
+}
+
 .hoursParallax{
   width: 100vw;
   height: 535px;
   box-sizing: border-box;
   transform-style: preserve-3d;
-  z-index: -1;
+  z-index: -2;
   &::before{
     content: '';
     width: 100vw;
@@ -219,15 +219,12 @@ body{
     background-position: top center ;
     background-repeat: no-repeat;
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     transform: translateZ(-1px) scale(2);
   }
 }
 
 .hours{
-  //background-image: url("../img/clock_back.jpg");
-  background-size: cover;
-  background-position: top center ;
   width: @pageWidth;
   height: 535px;
   display: flex;
@@ -235,10 +232,10 @@ body{
   align-items: center;
   justify-content: center;
   .hoursTitle{
-    .titleH2
+    .titleH2;
   }
   .hoursIconClock{
-    margin: 5px 0 30px 0;
+    margin: 30px 0 30px 0;
   }
   .hoursWorking{
     display: flex;
@@ -273,16 +270,159 @@ body{
   }
 }
 
-.menuPrice{
+.pageMenuPrice{
   background-color: #10181B;
-  height: 800px;
+  height: 880px;
   width: @pageWidth;
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 2;
+  z-index: 20;
   position: relative;
+  .innerMenuPrice{
+    width: @innerWidth;
+    display: flex;
+    flex-direction: column;
+    .menuPriceTitleBlock{
+      margin: 120px 0 0 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      h3{
+        .titleH3;
+      }
+    }
+    .menuPriceBlock{
+      margin: 70px 0 0 0;
+      display: flex;
+
+      .menuPrice{
+        display: flex;
+        margin: 0 30px;
+        ul {
+          width: @innerWidth / 3.5;
+          li {
+            padding: 27px 0;
+            display: flex;
+            justify-content: space-between;
+            .textMenuPrice;
+
+            span:nth-child(1) {
+              color: @greyColor;
+            }
+
+            span:nth-child(2) {
+              color: @caramelColor;
+            }
+          }
+        }
+      }
+    }
+    .moreCoffeeButtonBlock{
+      display: flex;
+      justify-content: center;
+      margin: 80px 0 0 0;
+      .moreCoffeeButton{
+        .button;
+      }
+    }
+  }
 }
+
+
+.titleH3 {
+  color: @caramelColor;
+  font-size: 1.5em;
+  font-family: @fontFamilyPoppins;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+
+.textMenuPrice{
+  font-size: 0.9em;
+  font-family: @fontFamilyPoppins;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.gallery{
+  width: @pageWidth;
+  height: 900px;
+  position: relative;
+  z-index: 20;
+  .galleryBlock{
+    display: flex;
+    flex-direction: row;
+    li{
+      height: 450px;
+      width: @pageWidth / 3;
+      .backgroundGallery;
+    }
+  }
+  .galleryBlock1{
+    li:nth-child(1){
+      background-image: url("../img/katalog1.jpg");
+    }
+    li:nth-child(2){
+      background-image: url("../img/katalog2.jpg");
+    }
+    li:nth-child(3){
+      background-image: url("../img/katalog3.jpg");
+    }
+  }
+  .galleryBlock2{
+    li:nth-child(1){
+      background-image: url("../img/katalog4.jpg");
+    }
+    li:nth-child(2){
+      background-image: url("../img/katalog5.jpg");
+    }
+    li:nth-child(3){
+      background-image: url("../img/katalog6.jpg");
+    }
+  }
+}
+
+.two{
+  height: 450px;
+  width: @pageWidth / 3;
+  overflow: hidden;
+}
+
+.child{
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/katalog1.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: all 0.7s ease-in;
+
+}
+
+.two:hover .child{
+  transform: scale(1.3,1.3);
+}
+
+//.child.active{
+//  transform: scale(1.3,1.3);
+//}
+
+.backgroundGallery{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.reservation{
+
+  height: 535px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 
 
 
