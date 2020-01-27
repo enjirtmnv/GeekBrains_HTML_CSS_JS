@@ -37,6 +37,7 @@ body{
     position: absolute;
     z-index: -1;
     transform: translateZ(-1px) scale(2.3);
+    filter: brightness(85%);
   }
 }
 
@@ -50,7 +51,6 @@ body{
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  filter: brightness(90%);
 }
 
 .logoCoffee{
@@ -59,7 +59,7 @@ body{
   margin: 21px 0 44px 0;
 }
 
-.textMenuAndClock{
+.textMenuNavAndClock{
   color: @whiteColor;
   text-transform: uppercase;
   font-family: @fontFamilyPoppins;
@@ -67,20 +67,20 @@ body{
   font-size: 0.9em;
 }
 
-.menu{
+.menuNav{
   display: flex;
   flex-direction: row;
   li{
     transition: transform 0.2s linear;
     &:hover{
-      transform: scale(1.1,1.1);
+      transform: scale(1.2,1.2);
     }
   }
   li a{
     text-decoration: none;
     margin: 0 23px;
     padding: 4px 0;
-    .textMenuAndClock;
+    .textMenuNavAndClock;
     &:hover{
       border-bottom: 2px solid @whiteColor;
     }
@@ -101,7 +101,7 @@ body{
   margin: 0 0 28px 0;
 }
 
-.discoverCoffeeButton{
+.discoverCoffeeButton, .moreCoffeeButton{
   color: @whiteColor;
   text-transform: uppercase;
   text-decoration: none;
@@ -135,7 +135,7 @@ body{
 }
 
 .historyAndWhyChooseUs{
-  width: @innerWidth;
+  width: @pageWidth;
   height: 1070px;
 }
 .titleH2{
@@ -202,8 +202,30 @@ body{
   }
 }
 
+.hoursParallax{
+  width: 100vw;
+  height: 535px;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  z-index: -1;
+  &::before{
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: url("../img/clock_back.jpg");
+    background-size: cover;
+    background-position: top center ;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2);
+  }
+}
+
 .hours{
-  background-image: url("../img/clock_back.jpg");
+  //background-image: url("../img/clock_back.jpg");
   background-size: cover;
   background-position: top center ;
   width: @pageWidth;
@@ -225,7 +247,7 @@ body{
     .hoursSundayToTuesday{
       width: 170px;
       margin: 0 25px 0 0;
-      .textMenuAndClock;
+      .textMenuNavAndClock;
       p{
         display: flex;
         justify-content: flex-end;
@@ -238,7 +260,7 @@ body{
     .hoursFridayAndSaturday{
       width: 170px;
       margin: 0 0 0 25px;
-      .textMenuAndClock;
+      .textMenuNavAndClock;
       p{
         display: flex;
         justify-content: flex-start;
@@ -250,5 +272,17 @@ body{
     }
   }
 }
+
+.menuPrice{
+  background-color: #10181B;
+  height: 800px;
+  width: @pageWidth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
 
 

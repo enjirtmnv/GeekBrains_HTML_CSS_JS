@@ -54,6 +54,7 @@ body {
   position: absolute;
   z-index: -1;
   transform: translateZ(-1px) scale(2.3);
+  filter: brightness(85%);
 }
 .header {
   margin: 0 auto;
@@ -65,31 +66,30 @@ body {
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  filter: brightness(90%);
 }
 .logoCoffee {
   width: 119px;
   height: 73px;
   margin: 21px 0 44px 0;
 }
-.textMenuAndClock {
+.textMenuNavAndClock {
   color: #ffffff;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 0.9em;
 }
-.menu {
+.menuNav {
   display: flex;
   flex-direction: row;
 }
-.menu li {
+.menuNav li {
   transition: transform 0.2s linear;
 }
-.menu li:hover {
-  transform: scale(1.1, 1.1);
+.menuNav li:hover {
+  transform: scale(1.2, 1.2);
 }
-.menu li a {
+.menuNav li a {
   text-decoration: none;
   margin: 0 23px;
   padding: 4px 0;
@@ -99,7 +99,7 @@ body {
   font-weight: 600;
   font-size: 0.9em;
 }
-.menu li a:hover {
+.menuNav li a:hover {
   border-bottom: 2px solid #ffffff;
 }
 .logoVintage {
@@ -114,7 +114,8 @@ body {
   font-weight: 800;
   margin: 0 0 28px 0;
 }
-.discoverCoffeeButton {
+.discoverCoffeeButton,
+.moreCoffeeButton {
   color: #ffffff;
   text-transform: uppercase;
   text-decoration: none;
@@ -131,7 +132,8 @@ body {
   letter-spacing: 0.15em;
   transition: transform 0.2s linear, background-color 0.2s linear, color 0.2s linear;
 }
-.discoverCoffeeButton:hover {
+.discoverCoffeeButton:hover,
+.moreCoffeeButton:hover {
   transform: scale(1.2, 1.2);
   background-color: #ffffff;
   color: #B66615;
@@ -146,7 +148,7 @@ body {
   position: relative;
 }
 .historyAndWhyChooseUs {
-  width: 66.66666667vw;
+  width: 100vw;
   height: 1070px;
 }
 .titleH2 {
@@ -230,8 +232,28 @@ body {
 .whyChooseUs .whyChooseUsImg {
   height: 375px;
 }
-.hours {
+.hoursParallax {
+  width: 100vw;
+  height: 535px;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+.hoursParallax::before {
+  content: '';
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
   background-image: url("../img/clock_back.jpg");
+  background-size: cover;
+  background-position: top center ;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+  transform: translateZ(-1px) scale(2);
+}
+.hours {
   background-size: cover;
   background-position: top center ;
   width: 100vw;
@@ -290,5 +312,15 @@ body {
 .hours .hoursWorking .hoursFridayAndSaturday p:nth-child(2) {
   font-size: 1.2em;
   font-family: 'Montserrat', sans-serif;
+}
+.menuPrice {
+  background-color: #10181B;
+  height: 800px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */
