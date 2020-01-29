@@ -51,6 +51,9 @@ body {
   top: 0;
   left: 0;
   background-image: url("../img/header.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: absolute;
   z-index: -1;
   transform: translateZ(-1px) scale(2.3);
@@ -68,6 +71,7 @@ body {
   align-items: center;
 }
 .header .logoCoffee {
+  display: block;
   width: 119px;
   height: 73px;
   margin: 21px 0 44px 0;
@@ -99,7 +103,7 @@ body {
   width: 159px;
   margin: 58px 0 40px 0;
 }
-.header .headerTitle {
+.header .headerTitleH1 {
   color: #ffffff;
   text-transform: lowercase;
   font-size: 4em;
@@ -129,7 +133,7 @@ body {
   background-color: #ffffff;
   color: #B66615;
 }
-.textMenuNavAndClock {
+.textNav {
   color: #ffffff;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
@@ -195,7 +199,7 @@ body {
 .history .historyTextBlock {
   width: 377px;
 }
-.history .historyTextBlock .historyTextTitle {
+.history .historyTextBlock .historyTextTitleH2 {
   margin: 0 0 20px 0 ;
   color: #B66615;
   font-size: 2.5em;
@@ -204,19 +208,19 @@ body {
   text-transform: capitalize;
 }
 .history .historyTextBlock .historyTextPar {
+  text-align: justify;
   color: #888888;
   font-size: 0.9em;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 2.5em;
-  text-align: justify;
 }
 .whyChooseUs {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.whyChooseUs .whyChooseUsTextTitle {
+.whyChooseUs .whyChooseUsTextTitleH2 {
   margin: 0 0 20px 0 ;
   color: #B66615;
   font-size: 2.5em;
@@ -226,12 +230,12 @@ body {
 }
 .whyChooseUs .whyChooseUsTextUl {
   list-style-type: disc;
+  text-align: justify;
   color: #888888;
   font-size: 0.9em;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 2.5em;
-  text-align: justify;
 }
 .whyChooseUs .whyChooseUsImg {
   height: 375px;
@@ -249,7 +253,6 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 2.5em;
-  text-align: justify;
 }
 .hoursParallax {
   width: 100vw;
@@ -280,7 +283,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.hours .hoursTitle {
+.hours .hoursTitleH2 {
   color: #B66615;
   font-size: 2.5em;
   font-family: 'Poppins', sans-serif;
@@ -343,19 +346,19 @@ body {
   display: flex;
   flex-direction: column;
 }
-.pageMenuPrice .innerMenuPrice .menuPriceTitleBlock {
+.pageMenuPrice .innerMenuPrice .menuPriceTitleH3Block {
   margin: 120px 0 0 0;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.pageMenuPrice .innerMenuPrice .menuPriceTitleBlock h3 {
+.pageMenuPrice .innerMenuPrice .menuPriceTitleH3Block h3 {
+  margin: 0 0 20px 0;
   color: #B66615;
   font-size: 1.5em;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
-  margin: 0 0 20px 0;
 }
 .pageMenuPrice .innerMenuPrice .menuPriceBlock {
   margin: 70px 0 0 0;
@@ -416,7 +419,6 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
-  margin: 0 0 20px 0;
 }
 .textMenuPrice {
   font-size: 0.9em;
@@ -438,7 +440,7 @@ body {
   height: 450px;
   width: 33.33333333vw;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 33.33333333vw;
   background-position: center center;
 }
 .gallery .galleryBlock1 li:nth-child(1) {
@@ -459,33 +461,113 @@ body {
 .gallery .galleryBlock2 li:nth-child(3) {
   background-image: url("../img/katalog6.jpg");
 }
-.two {
-  height: 450px;
-  width: 33.33333333vw;
-  overflow: hidden;
-}
-.child {
-  width: 100%;
-  height: 100%;
-  background-image: url("../img/katalog1.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  transition: all 0.7s ease-in;
-}
-.two:hover .child {
-  transform: scale(1.3, 1.3);
-}
 .backgroundGallery {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 33.33333333vw;
   background-position: center center;
 }
 .reservation {
-  height: 535px;
+  height: 735px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.reservation .reservationTitleH2 {
+  color: #B66615;
+  font-size: 2.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.reservation p {
+  width: 700px;
+  text-align: center;
+  margin: 65px 0 0 0;
+  color: #888888;
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 2.5em;
+}
+.reservation a {
+  color: #000000;
+  font-size: 2em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 40px 0 55px 0;
+  text-decoration: none;
+}
+.reservation a:hover {
+  color: #393939;
+}
+.reservation ul {
+  text-align: center;
+}
+.reservation ul .reservationTitleH3 {
+  margin: 25px 0 15px 0;
+  color: #B66615;
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.reservation ul li {
+  color: #888888;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.4em;
+}
+.map {
+  width: 100vw;
+  height: 550px;
+}
+.footer {
+  width: 100vw;
+  height: 400px;
+  background-color: #10181B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer .logoCoffee {
+  display: block;
+  width: 149px;
+  height: 93px;
+}
+.footer ul {
+  display: flex;
+  flex-direction: row;
+  margin: 50px 0 15px 0;
+}
+.footer ul li {
+  transition: transform 0.2s linear;
+  margin: 0 5px;
+}
+.footer ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background-color: #2A3032;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.footer ul li a img {
+  height: 20px;
+}
+.footer ul li:hover {
+  transform: scale(1.2, 1.2);
+}
+.footer p {
+  color: #888888;
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.4em;
 }
 /*# sourceMappingURL=style.css.map */

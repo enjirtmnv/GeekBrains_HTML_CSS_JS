@@ -34,6 +34,9 @@ body{
     top: 0;
     left: 0;
     background-image: url("../img/header.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     position: absolute;
     z-index: -1;
     transform: translateZ(-1px) scale(2.3);
@@ -52,6 +55,7 @@ body{
   flex-direction: column;
   align-items: center;
   .logoCoffee{
+    display: block;
     width: 119px;
     height: 73px;
     margin: 21px 0 44px 0;
@@ -69,7 +73,7 @@ body{
       text-decoration: none;
       margin: 0 23px;
       padding: 4px 0;
-      .textMenuNavAndClock;
+      .textNav;
       &:hover{
         border-bottom: 2px solid @whiteColor;
       }
@@ -79,7 +83,7 @@ body{
     width: 159px;
     margin: 58px 0 40px 0;
   }
-  .headerTitle{
+  .headerTitleH1{
     color: @whiteColor;
     text-transform: lowercase;
     font-size: 4em;
@@ -92,7 +96,7 @@ body{
   }
 }
 
-.textMenuNavAndClock{
+.textNav{
   color: @whiteColor;
   text-transform: uppercase;
   font-family: @fontFamilyPoppins;
@@ -159,11 +163,12 @@ body{
   }
   .historyTextBlock{
     width: 377px;
-    .historyTextTitle{
+    .historyTextTitleH2{
       margin: 0 0 20px 0 ;
       .titleH2;
     }
     .historyTextPar{
+      text-align: justify;
       .par;
     }
   }
@@ -173,12 +178,13 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  .whyChooseUsTextTitle{
+  .whyChooseUsTextTitleH2{
     margin: 0 0 20px 0 ;
     .titleH2;
   }
   .whyChooseUsTextUl{
     list-style-type: disc;
+    text-align: justify;
     .par;
   }
   .whyChooseUsImg{
@@ -199,7 +205,6 @@ body{
   font-family: @fontFamilyPoppins;
   font-weight: 400;
   line-height: 2.5em;
-  text-align: justify;
 }
 
 .hoursParallax{
@@ -231,7 +236,7 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .hoursTitle{
+  .hoursTitleH2{
     .titleH2;
   }
   .hoursIconClock{
@@ -244,7 +249,7 @@ body{
     .hoursSundayToTuesday{
       width: 170px;
       margin: 0 25px 0 0;
-      .textMenuNavAndClock;
+      .textNav;
       p{
         display: flex;
         justify-content: flex-end;
@@ -257,7 +262,7 @@ body{
     .hoursFridayAndSaturday{
       width: 170px;
       margin: 0 0 0 25px;
-      .textMenuNavAndClock;
+      .textNav;
       p{
         display: flex;
         justify-content: flex-start;
@@ -282,12 +287,13 @@ body{
     width: @innerWidth;
     display: flex;
     flex-direction: column;
-    .menuPriceTitleBlock{
+    .menuPriceTitleH3Block{
       margin: 120px 0 0 0;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       h3{
+        margin: 0 0 20px 0;
         .titleH3;
       }
     }
@@ -305,11 +311,9 @@ body{
             display: flex;
             justify-content: space-between;
             .textMenuPrice;
-
             span:nth-child(1) {
               color: @greyColor;
             }
-
             span:nth-child(2) {
               color: @caramelColor;
             }
@@ -335,7 +339,6 @@ body{
   font-family: @fontFamilyPoppins;
   font-weight: 600;
   text-transform: uppercase;
-  margin: 0 0 20px 0;
 }
 
 .textMenuPrice{
@@ -383,45 +386,108 @@ body{
   }
 }
 
-.two{
-  height: 450px;
-  width: @pageWidth / 3;
-  overflow: hidden;
-}
-
-.child{
-  width: 100%;
-  height: 100%;
-  background-image: url("../img/katalog1.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  transition: all 0.7s ease-in;
-
-}
-
-.two:hover .child{
-  transform: scale(1.3,1.3);
-}
-
-//.child.active{
-//  transform: scale(1.3,1.3);
-//}
-
 .backgroundGallery{
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto @pageWidth / 3;
   background-position: center center;
 }
 
 .reservation{
-
-  height: 535px;
+  height: 735px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .reservationTitleH2{
+    .titleH2;
+  }
+  p{
+    width: 700px;
+    text-align: center;
+    margin: 65px 0 0 0;
+    .par;
+  }
+  a{
+    color: #000000;
+    font-size: 2em;
+    font-family: @fontFamilyPoppins;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 40px 0 55px 0;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #393939;
+  }
+  ul{
+    text-align: center;
+    .reservationTitleH3{
+      margin: 25px 0 15px 0;
+      .titleH3
+    }
+    li{
+      color: @greyColor;
+      font-size: 1em;
+      font-family: @fontFamilyPoppins;
+      font-weight: 400;
+      line-height: 1.4em;
+    }
+  }
 }
+
+.map{
+  width: @pageWidth;
+  height: 550px;
+}
+
+.footer{
+  width: @pageWidth;
+  height: 400px;
+  background-color: #10181B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .logoCoffee{
+    display: block;
+    width: 149px;
+    height: 93px;
+  }
+  ul{
+    display: flex;
+    flex-direction: row;
+    margin: 50px 0 15px 0;
+    li{
+      transition: transform 0.2s linear;
+      margin: 0 5px;
+      a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        background-color: #2A3032;
+        border-radius: 10px;
+        text-decoration: none;
+
+        img{
+          height: 20px;
+        }
+      }
+    }
+    li:hover{
+      transform: scale(1.2,1.2);
+    }
+  }
+  p{
+    color: @greyColor;
+    font-size: 0.9em;
+    font-family: @fontFamilyPoppins;
+    font-weight: 400;
+    line-height: 1.4em;
+  }
+}
+
 
 
 
