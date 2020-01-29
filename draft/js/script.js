@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", scrolling, false);
 
 
 let two = document.querySelector('.child');
+let one = document.querySelector('.fri');
 
 function scrolling(e) {
     if (fullVisible(two)) {
@@ -23,7 +24,13 @@ function scrolling(e) {
     } else{
         two.classList.remove("active");
     }
+    if (fullVisible(one)) {
+        one.classList.add("active");
+    } else{
+        one.classList.remove("active");
+    }
 }
+
 
 function fullVisible(el) {
     let elementBoundary = el.getBoundingClientRect();
