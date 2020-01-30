@@ -4,50 +4,27 @@
 @pageWidth: 100vw;
 @fontFamilyPoppins: 'Poppins', sans-serif;
 @fontFamilyMontserrat: 'Montserrat', sans-serif;
-@innerWidth: 2/3 * @pageWidth;
+@innerWidth: @pageWidth;
 @whiteColor: #ffffff;
 @caramelColor: #B66615;
 @greyColor: #888888;
 
-html{
-  overflow: hidden;
-}
-
-body{
-  height: 100vh;
-  perspective: 1px;
-  transform-style: preserve-3d ;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 .headerParallax{
-  width: 100vw;
-  height: 80vh;
-  box-sizing: border-box;
-  transform-style: preserve-3d ;
-  z-index: -1;
+  height: 50vh;
   &::before{
-    content: '';
-    width: 100vw;
-    height: 80vh;
-    top: 0;
-    left: 0;
-    background-image: url("../img/header.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: -1;
-    transform: translateZ(-1px) scale(2.3);
-    filter: brightness(80%);
+    content: none;
   }
 }
 
 .header{
   margin: 0 auto;
   width: @pageWidth;
-  height: 80vh;
+  height: 50vh;
+  background-image: url("../img/header.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: brightness(80%);
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -150,11 +127,11 @@ body{
     flex-direction: column;
     .historyImgBig{
       position: relative;
-      height: 320px;
+      height: 213px;
     }
     .historyImgSmall{
       position: relative;
-      height: 240px;
+      height: 160px;
       left: 190px;
       bottom: 95px;
     }
@@ -175,7 +152,8 @@ body{
 .whyChooseUs{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  margin: 0 0 95px 0;
   .whyChooseUsTextTitleH2{
     margin: 0 0 20px 0 ;
     .titleH2;
@@ -186,7 +164,7 @@ body{
     .par;
   }
   .whyChooseUsImg{
-    height: 375px;
+    height: 250px;
   }
 }
 
@@ -206,30 +184,18 @@ body{
 }
 
 .hoursParallax{
-  width: 100vw;
-  height: 535px;
-  box-sizing: border-box;
-  transform-style: preserve-3d;
-  z-index: -2;
   &::before{
-    content: '';
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-image: url("../img/clock_back.jpg");
-    background-size: cover;
-    background-position: top center ;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: -2;
-    transform: translateZ(-1px) scale(2);
+    content: none;
   }
 }
 
 .hours{
   width: @pageWidth;
   height: 535px;
+  background-image: url("../img/clock_back.jpg");
+  background-size: cover;
+  background-position: top center ;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -275,7 +241,7 @@ body{
 
 .pageMenuPrice{
   background-color: #10181B;
-  height: 880px;
+  height: 1680px;
   width: @pageWidth;
   display: flex;
   justify-content: center;
@@ -285,26 +251,23 @@ body{
     width: @innerWidth;
     display: flex;
     flex-direction: column;
-    .menuPriceTitleH3Block{
-      margin: 120px 0 0 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      h3{
-        margin: 0 0 20px 0;
-        .titleH3;
-      }
-    }
     .menuPriceBlock{
-      margin: 70px 0 0 0;
+      margin: 40px 0 0 0;
       display: flex;
-
+      flex-direction: column;
       .menuPrice{
         display: flex;
-        margin: 0 30px;
+        justify-content: center;
+        margin: 0 15px;
         ul {
-          width: @innerWidth / 3.5;
-          li {
+          width: @innerWidth / 2;
+          h3{
+            display: flex;
+            justify-content: center;
+            margin: 40px 0 15px 0;
+            .titleH3;
+          }
+          li{
             padding: 27px 0;
             display: flex;
             justify-content: space-between;
@@ -322,7 +285,7 @@ body{
     .moreCoffeeButtonBlock{
       display: flex;
       justify-content: center;
-      margin: 80px 0 0 0;
+      margin: 50px 0 0 0;
       .moreCoffeeButton{
         .button;
       }
@@ -348,14 +311,14 @@ body{
 
 .gallery{
   width: @pageWidth;
-  height: 900px;
+  height: 600px;
   position: relative;
   z-index: 20;
   .galleryBlock{
     display: flex;
     flex-direction: row;
     li{
-      height: 450px;
+      height: 300px;
       width: @pageWidth / 3;
       .backgroundGallery;
     }
