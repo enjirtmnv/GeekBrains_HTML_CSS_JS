@@ -344,20 +344,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-.pageMenuPrice .innerMenuPrice .menuPriceTitleH3Block {
-  margin: 120px 0 0 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.pageMenuPrice .innerMenuPrice .menuPriceTitleH3Block h3 {
-  margin: 0 0 20px 0;
-  color: #B66615;
-  font-size: 1.5em;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-}
 .pageMenuPrice .innerMenuPrice .menuPriceBlock {
   margin: 70px 0 0 0;
   display: flex;
@@ -368,6 +354,17 @@ body {
 }
 .pageMenuPrice .innerMenuPrice .menuPriceBlock .menuPrice ul {
   width: 19.04761905vw;
+}
+.pageMenuPrice .innerMenuPrice .menuPriceBlock .menuPrice ul h3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 0 40px 0;
+  color: #B66615;
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .pageMenuPrice .innerMenuPrice .menuPriceBlock .menuPrice ul li {
   padding: 27px 0;
