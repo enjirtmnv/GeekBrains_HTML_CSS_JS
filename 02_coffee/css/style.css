@@ -84,6 +84,9 @@ body {
 .header .menuNav li:hover {
   transform: scale(1.2, 1.2);
 }
+.header .menuNav li:active {
+  transform: scale(1, 1);
+}
 .header .menuNav li a {
   text-decoration: none;
   margin: 0 23px;
@@ -124,12 +127,17 @@ body {
   font-weight: 600;
   font-size: 0.7em;
   letter-spacing: 0.15em;
-  transition: transform 0.2s linear, background-color 0.2s linear, color 0.2s linear;
+  transition: all 0.2s linear;
 }
 .header .discoverCoffeeButton:hover {
   transform: scale(1.2, 1.2);
   background-color: #ffffff;
   color: #B66615;
+}
+.header .discoverCoffeeButton:active {
+  transform: scale(1, 1);
+  background-color: #B66615;
+  color: #ffffff;
 }
 .textNav {
   color: #ffffff;
@@ -153,12 +161,17 @@ body {
   font-weight: 600;
   font-size: 0.7em;
   letter-spacing: 0.15em;
-  transition: transform 0.2s linear, background-color 0.2s linear, color 0.2s linear;
+  transition: all 0.2s linear;
 }
 .button:hover {
   transform: scale(1.2, 1.2);
   background-color: #ffffff;
   color: #B66615;
+}
+.button:active {
+  transform: scale(1, 1);
+  background-color: #B66615;
+  color: #ffffff;
 }
 .pageHistoryAndWhyChooseUs {
   width: 100vw;
@@ -401,12 +414,17 @@ body {
   font-weight: 600;
   font-size: 0.7em;
   letter-spacing: 0.15em;
-  transition: transform 0.2s linear, background-color 0.2s linear, color 0.2s linear;
+  transition: all 0.2s linear;
 }
 .pageMenuPrice .innerMenuPrice .moreCoffeeButtonBlock .moreCoffeeButton:hover {
   transform: scale(1.2, 1.2);
   background-color: #ffffff;
   color: #B66615;
+}
+.pageMenuPrice .innerMenuPrice .moreCoffeeButtonBlock .moreCoffeeButton:active {
+  transform: scale(1, 1);
+  background-color: #B66615;
+  color: #ffffff;
 }
 .titleH3 {
   color: #B66615;
@@ -493,9 +511,41 @@ body {
   text-transform: uppercase;
   margin: 40px 0 55px 0;
   text-decoration: none;
+  transition: all 0.2s linear;
 }
 .reservation a:hover {
-  color: #393939;
+  color: #808080;
+  transform: scale(1.2, 1.2);
+}
+.reservation a:active {
+  transform: scale(1, 1);
+}
+.reservation .callThePhone {
+  position: fixed;
+  display: none;
+  height: 400px;
+  width: 400px;
+  background-color: #10181B;
+  border-radius: 10px;
+}
+.reservation .callThePhone .callThePhoneText {
+  position: absolute;
+  display: inherit;
+  top: 50%;
+  left: 50%;
+  margin: -24px 0 0 -120px;
+  color: #ffffff;
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.reservation .callThePhone .closePopup {
+  height: 30px;
+  position: absolute;
+  display: inherit;
+  left: 90%;
+  top: 3%;
 }
 .reservation ul {
   text-align: center;
@@ -557,6 +607,9 @@ body {
 }
 .footer ul li:hover {
   transform: scale(1.2, 1.2);
+}
+.footer ul li:active {
+  transform: scale(1, 1);
 }
 .footer p {
   color: #888888;

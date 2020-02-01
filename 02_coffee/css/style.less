@@ -66,6 +66,9 @@ body{
       &:hover{
         transform: scale(1.2,1.2);
       }
+      &:active{
+        transform: scale(1,1);
+      }
     }
     li a{
       text-decoration: none;
@@ -117,11 +120,16 @@ body{
   font-weight: 600;
   font-size: 0.7em;
   letter-spacing: 0.15em;
-  transition: transform 0.2s linear, background-color  0.2s linear, color 0.2s linear;
+  transition: all 0.2s linear;
   &:hover{
     transform: scale(1.2,1.2);
     background-color: @whiteColor;
     color: @caramelColor;
+  }
+  &:active{
+    transform: scale(1,1);
+    background-color: @caramelColor;
+    color: @whiteColor;
   }
 }
 
@@ -410,9 +418,41 @@ body{
     text-transform: uppercase;
     margin: 40px 0 55px 0;
     text-decoration: none;
+    transition: all 0.2s linear;
   }
   a:hover{
-    color: #393939;
+    color: #808080;
+    transform: scale(1.2,1.2);
+  }
+  a:active{
+    transform: scale(1,1)
+  }
+  .callThePhone{
+    position: fixed;
+    display: none;
+    height: 400px;
+    width: 400px;
+    background-color: #10181B;
+    border-radius: 10px;
+    .callThePhoneText{
+      position: absolute;
+      display: inherit;
+      top: 50%;
+      left: 50%;
+      margin: -24px 0 0 -120px;
+      color: @whiteColor;
+      font-size: 1.5em;
+      font-family: @fontFamilyPoppins;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .closePopup{
+      height: 30px;
+      position: absolute;
+      display: inherit;
+      left: 90%;
+      top: 3%;
+    }
   }
   ul{
     text-align: center;
@@ -464,7 +504,6 @@ body{
         background-color: #2A3032;
         border-radius: 10px;
         text-decoration: none;
-
         img{
           height: 20px;
         }
@@ -472,6 +511,9 @@ body{
     }
     li:hover{
       transform: scale(1.2,1.2);
+    }
+    li:active{
+      transform: scale(1,1);
     }
   }
   p{
