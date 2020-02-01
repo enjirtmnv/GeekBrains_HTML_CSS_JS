@@ -1,11 +1,19 @@
-// document.addEventListener("DOMContentLoaded", forPhone, false);
-//
-// let headerParallax = document.querySelector(".headerParallax");
-//
-// function forPhone() {
-//     if (window.matchMedia("(max-width: 1024px)").matches) {
-//         headerParallax.classList.remove(".headerParallax");
-//     } else {
-//         headerParallax.classList.add(".headerParallax");
-//     }
-// }
+document.addEventListener("DOMContentLoaded", callPhone, false);
+
+let phone = document.querySelector('.reservation a');
+let callThePhone = document.querySelector('.callThePhone');
+let closePopup = document.querySelector('.closePopup');
+
+
+let h2 = document.querySelector('.reservationTitleH2');
+
+function callPhone() {
+    phone.onclick = function () {
+        callThePhone.style.display = 'block';
+    };
+
+    closePopup.addEventListener('click', function () {
+        callThePhone.style.display = 'none';
+    });
+}
+
