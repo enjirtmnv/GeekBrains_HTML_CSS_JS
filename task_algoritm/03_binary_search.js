@@ -2,13 +2,11 @@ function binary_search(arr, element) {
     //element - элемент, индекс которого нужно найти с помощью бинарного поиска из массива arr
     let first = 0;                      //O(1)
     let last = arr.length - 1;          //O(1)
-    let middle;                         //O(1)
-    let guess;               //O(1)        //guess - догадка, предположение, найденный элемент масиива
 
     while ( first <= last) {        //O(log n)
 
-        middle = Math.floor(first/2 + last/2);   //O(1)
-        guess = arr[middle];              //O(1)
+        let middle = Math.floor(first/2 + last/2);   //O(1)
+        let guess = arr[middle];              //O(1)  guess - догадка, предположение, найденный элемент масиива
 
         if (guess == element){     //O(1)
             return middle;        //O(1)         //возвращение индекса искомого элемента
