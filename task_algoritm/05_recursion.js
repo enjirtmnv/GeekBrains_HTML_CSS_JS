@@ -11,7 +11,7 @@ console.log(power(2, 6));
 
 //Рекурсивный способ возведения в степень
 const power2 = (x,n) => {
-    if (n == 1){
+    if (n === 1){
         return x;
     } else {
         return x * power2(x, n - 1)
@@ -20,6 +20,13 @@ const power2 = (x,n) => {
 
 console.log(power2(2, 5));
 
+//Рекурсивный способ факториала, используя условный оператор ? вместо if
+
+function power3(n){
+    return ( n!==1 ) ? n * power3(n - 1) : 1; //Базисом рекурсии является значение 1
+}
+
+console.log(power3(5));
 
 
 //Рекурсивные обходы
@@ -44,3 +51,138 @@ const sumSalaries = (department)  => {    //department - отдел
 };
 
 console.log(sumSalaries(company));
+
+
+//Вычисление суммы чисел с использованиес цикла
+function sumTo(n) {
+    let resultSumTo = 0;
+    for (let j = 1; j <= n ; j++){
+        resultSumTo += j;
+    }
+    return resultSumTo;
+}
+
+console.log(sumTo(5));
+
+//Вычисление суммы чисел через рекурсию
+function sumTo2(n) {
+    if ( n === 1){
+        return 1
+    } else {
+        return (n + sumTo2(n - 1));
+    }
+}
+
+console.log(sumTo2(5));
+
+//Вычисление суммы чисел через арифмитическую прогрессию №1
+const sumTo3 = n => {
+
+    let arr = [];
+
+    for (let k = 1; k <= n; k++){
+        arr.push(k);
+    }
+
+    let l = arr.length;
+
+    let resultArPr = ((arr[0] + arr[l - 1]) * l) / 2 ;
+
+    return resultArPr;
+
+};
+
+console.log(sumTo3(5));
+
+//Вычисление суммы чисел через арифмитическую прогрессию №2
+function sumTo4(n) {
+    return n * (n + 1) / 2;
+}
+
+console.log(sumTo4(100));
+
+//Числа Фибоначчи
+function fib(n) {
+
+    let arr = [1,1];
+
+    for(let i = 1; i < n - 1; i++){
+        let numFi = arr[i - 1] + arr[i];
+        arr.push(numFi)
+    }
+
+    return arr[n - 1]
+}
+
+
+console.time('FirtsWay');
+console.log(fib(77));
+console.timeEnd('FirtsWay');
+
+
+
+//Числа Фибоначчи через рекурсию
+function fib2(n) {
+    return n <= 1? n : fib(n - 1) + fib(n - 2);
+}
+
+console.time('FirtsWay');
+console.log(fib2(77));
+console.timeEnd('FirtsWay');
+
+
+//Числа Фибоначчи через цикл
+function fib3(n) {
+    let a = 1;
+    let b = 1;
+    for (let i = 3; i <= n; i++) {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
+}
+
+console.time('FirtsWay');
+console.log(fib3(77));
+console.timeEnd('FirtsWay');
+
+//Вывод односвязного списка через рекурсию
+let list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
+        }
+    }
+};
+
+
+function printList(list) {
+    return list.next ? printList(list.next) : list.value;
+}
+
+console.log(printList(list));
+
+
+
+
+
+
+
+//
+//
+// function printList2(list){
+//     for (let i = 0; i < list.length; i++){
+//         return list.value
+//     }
+// };
+//
+// console.log(printList2(list));
+
+
