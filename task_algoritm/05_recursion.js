@@ -147,7 +147,7 @@ console.time('FirtsWay');
 console.log(fib3(77));
 console.timeEnd('FirtsWay');
 
-//Вывод односвязного списка через рекурсию
+//Вывод односвязного списка через рекурсию в обратном порядке
 let list = {
     value: 1,
     next: {
@@ -163,26 +163,37 @@ let list = {
 };
 
 
-function printList(list) {
-    return list.next ? printList(list.next) : list.value;
+function printList(linkedList) {
+
+    if (linkedList.next){
+        printList(linkedList.next);     //делаем то же самое для остальной части списка
+    }
+    console.log(linkedList.value);   //выводим текущий элемент
 }
 
-console.log(printList(list));
+printList(list); //способ с циклом более эффективный. В обеих реализациях делается то же самое, но для цикла не тратятся ресурсы для вложенных вызовов.
+//С другой стороны, рекурсивный вариант более короткий и, возможно, более простой для понимания.
 
 
+//Вывод односвязного списка через цикл
 
+function printListCycle(list) {
+    //Вариант с использованием цикла сложнее, чем в предыдущей задаче.
+    // Нет способа сразу получить последнее значение в списке list. Мы также не можем «вернуться назад», к предыдущему элементу списка.
+    // Поэтому мы можем сначала перебрать элементы в прямом порядке и запомнить их в массиве, а затем вывести то, что мы запомнили, в обратном порядке:
 
+    let arr = [];
+    let tmp = list;
 
+    while (tmp) {
+        arr.push(tmp.value);
+        tmp = tmp.next;
+    }
 
+    for (let i = arr.length - 1; i >= 0; i--) {
+       console.log( arr[i] );
+    }
 
-//
-//
-// function printList2(list){
-//     for (let i = 0; i < list.length; i++){
-//         return list.value
-//     }
-// };
-//
-// console.log(printList2(list));
+}
 
-
+printListCycle(list);
