@@ -168,7 +168,7 @@ function printList(linkedList) {
     if (linkedList.next){
         printList(linkedList.next);     //делаем то же самое для остальной части списка
     }
-    console.log(linkedList.value);   //выводим текущий элемент
+    console.log(linkedList.value + 'vo');   //выводим текущий элемент
 }
 
 printList(list); //способ с циклом более эффективный. В обеих реализациях делается то же самое, но для цикла не тратятся ресурсы для вложенных вызовов.
@@ -198,7 +198,7 @@ function printListCycle(list) {
 
 printListCycle(list);
 
-
+//Фибоначчи повторение
 function fibonacci(n){
     if (n <= 1){
         return n
@@ -211,3 +211,121 @@ console.log(fibonacci(7));
 
 // 0 1 2 3 4 5 6 7
 // 0 1 1 2 3 5 8 13
+
+
+//Сумма массива через рекурсию
+function sumArray(arr) {
+    let l = arr.length;
+    let n = Math.floor(l/2);
+
+    if (l === 0 ){
+        return 0;
+    } else if (l === 1){
+        return arr[0];
+    } else {
+        return (sumArray(arr.slice(0,n)) + sumArray(arr.slice(n,l)));
+    }
+}
+//6,112,38     +      -7,0,-132,11
+//6  + 112,38         +      -7 0 + -132 11
+//6 +
+
+myArr = [6,112,38,-7,0,-132,11];
+myArr2 = [];
+myArr3 = [77];
+console.log(sumArray(myArr));
+
+
+//Факториал рекурсия проверка
+function f(n) {
+    if (n === 0){
+        return 1;
+    } else {
+        return f(n-1) * n;
+    }
+}
+
+console.log(f(5));
+
+
+//Рекурсивная функция для подсчета элементов в списке
+
+let listValue = {
+    value: 1,
+    next: {
+        value: 4,
+        next: {
+            value: 30,
+            next: {
+                value: 2,
+                next: null
+            }
+        }
+    }
+};
+
+function myList(list) {
+
+    if (list.next === null){
+        return 1;
+    } else {
+       return myList(list.next) + 1;
+
+    }
+
+}
+
+console.log(myList(listValue));
+
+//Рекурсивная функция для подсчета cуммы элементов в списке
+
+function sum(x, y) {
+    return x+y;
+}
+
+function myList2(list) {
+
+    if (list.next === null){
+        return list.value;
+    } else {
+        return sum(myList2(list.next),list.value);
+    }
+
+}
+
+console.log(myList2(listValue));
+
+//Найти наибольшее число в списке;
+
+function max(x, y) {
+    return x > y ? x : y;
+}
+
+function myList3(list) {
+    if (list.next === null){
+        return list.value;
+    } else {
+        // return max(myList3(list.next),list.value);
+        if (myList3(list.next) > list.value){
+            return myList3(list.next)
+        } else {
+            return list.value;
+        }
+    }
+
+}
+
+console.log(myList3(listValue));
+
+//Бинарный поиск через рекурсию
+
+function bin(arr,n) {
+    if (n){
+
+    } else {
+        return arr[]
+    }
+}
+
+let myArr = [1,4,67,89,123,456,678,900];
+console.log(bin(myArr, 21));
