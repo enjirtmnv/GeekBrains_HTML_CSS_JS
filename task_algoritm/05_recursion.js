@@ -323,7 +323,7 @@ function bin(arr,n) {
     if (n){
 
     } else {
-        return arr[]
+        return arr[];
     }
 }
 
