@@ -65,4 +65,22 @@ function quickSort3(arr) {
 myArr3 = [2,55,677,1,-98,34,76,1343,560,88,13,-7];
 
 quickSort3(myArr3);
-//
+
+
+
+
+//Таблица умножения
+function multiplicationTable(arr) {
+    for (let i = 0; i < arr.length; i++){
+        for (let j = 0; j < arr.length; j++){
+            let result = arr[i] * arr[j];
+            console.log(result);
+        }
+    }
+}
+
+arrMultiTable = [2 , 3, 7, 8, 10];
+
+multiplicationTable(arrMultiTable);
+
+
