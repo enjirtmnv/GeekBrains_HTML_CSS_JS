@@ -317,15 +317,14 @@ function myList3(list) {
 
 console.log(myList3(listValue));
 
-//Бинарный поиск через рекурсию
-
+//Бинарный поиск
+let myArr5 = [1,4,67,89,123,456,21,678,900];
 function bin(arr,n) {
-    if (n){
-
-    } else {
-        return arr[];
+    for (let i = 0; i < arr.length - 1; i++){
+        if(arr[i] ===n){
+            return i;
+        }
     }
 }
 
-let myArr = [1,4,67,89,123,456,678,900];
-console.log(bin(myArr, 21));
+console.log(bin(myArr5, 21));
