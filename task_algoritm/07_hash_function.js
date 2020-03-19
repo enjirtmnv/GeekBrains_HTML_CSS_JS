@@ -25,19 +25,45 @@ function coupleKeyValue() {
 coupleKeyValue();
 
 
+
 function name(myName) {
-    let coupleKeyValue = coupleKeyValue()
-    let nameArr  = myName.split('');
-    return nameArr;
+    let nameArr = myName.split('');
+    console.log(nameArr);
 
-    for(let i = 0; i < resAbc.length - 1; i++){
-        if( nameArr[i] ==  coupleKeyValue[i]){
+    let object = coupleKeyValue();
+    console.log(object);
 
+    let count = 0;
+
+    for (let key in object){
+        for (let value of nameArr){
+            if (key === value){
+                count = object[key] + count;
+            }
         }
     }
+    console.log(count);
 }
+
+
+
+function name(myName) {
+    let nameArr = myName.split('');
+    console.log(nameArr);
+
+    let object = coupleKeyValue();
+    console.log(object);
+
+    let count = 0;
+
+    for (let value of nameArr){
+            count = object[value] + count;
+    }
+    console.log(count);
+}
+
 name('bob');
 
-
-
-
+//берем букву из массива имени
+//ищем букву-ключ в обьекте
+//сохраняем значение в переменной
