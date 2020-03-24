@@ -34,19 +34,22 @@ console.timeEnd('FirtsWay3');
 // В отличие от первого варианта, эта концепция требует от нас обработки 
 // каждого элемента в массиве каждый раз, когда мы проходим через него.
 function bubble2(arr) {
-    for (let j = arr.length - 1; j > 0; j--){
-        for (let i = 0; i < j; i++){
+    let n = arr.length;
+    let swapped;
+
+    do{
+        swapped = false;
+        for (let i = 0; i < n; i++){
             if(arr[i] > arr[i+1]){
-                let swap = arr[i];
+                let temp = arr[i];
                 arr[i] = arr[i+1];
-                arr[i+1] = swap;
-                wasSwap = true;
+                arr[i+1] = temp;
+                swapped = true;
             }
         }
-        if (!wasSwap) break;
-    }
+    } while (swapped);
     return arr;
-}
+};
 
 let myArr2 = [4,5,1,10,-12,-234,2353,-2,76,-33,-1224,654,98,0,3];
 console.time('FirtsWay2');
